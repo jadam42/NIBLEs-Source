@@ -16,7 +16,7 @@ import concurrent.futures
 import numpy as np
 from scipy.integrate import solve_ivp
 
-import NIBLEs.rotfunc as rot
+import simcode.rotfunc as rot
 
 #~~~~~ Functions for Bloch Solving ~~~~~#
 

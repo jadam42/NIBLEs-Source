@@ -29,10 +29,10 @@ import math as mat
 import numpy as np
 import matplotlib.pyplot as plt
 
-from NIBLEs import solver
-import NIBLEs.relaxfunc as relax
-import NIBLEs.fieldfunc as field
-import NIBLEs.rotfunc as rot
+from simcode import solver
+import simcode.relaxfunc as relax
+import simcode.fieldfunc as field
+import simcode.rotfunc as rot
 
 
 class Experiment():

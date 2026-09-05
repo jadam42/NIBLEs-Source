@@ -5,7 +5,7 @@ relevant material parameters.
 
 import numpy as np
 
-from NIBLEs import samplegen
+from simcode import samplegen
 
 class InfiniteRelax(samplegen.Material):
     """
