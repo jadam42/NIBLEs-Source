@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: NIBLEs
+Version: 2026.0.1
+Summary: Block equation solver for simulating MR data
+Author-email: John Adams <jadam33@uwo.ca>
+License-Expression: GPL-3.0-or-later
+Keywords: MRI,NMR,Bloch solver
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.26
+Requires-Dist: scipy>=1.11
+Dynamic: license-file
+
+
