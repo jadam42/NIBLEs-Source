@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "NIBLEs"
+authors = [
+    {name = "John Adams", email = "jadam33@uwo.ca"},
+]
+description = "Block equation solver for simulating MR data"
+readme = "README.md"
+license = "GPL-3.0-or-later"
+requires-python = ">=3.8"
+version = "2026.0.1"
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11"
+]
+keywords = ["MRI", "NMR", "Bloch solver"]
