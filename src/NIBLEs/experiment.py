@@ -6,13 +6,13 @@ This file defines the Experiment class, which is used for loading in
 sample properties, defining a pulse sequence, and simulating that 
 sequence to produce a simulated signal. Methods within Experiment are 
 split into five types: 
-    Methods for setting and manipulating system variables; 
-    Utility methods used to standardaze common functionality of pulse 
-        sequence elements; 
-    Methods which define and simulate the effects of various pulse 
-        sequence elements; 
-    Methods for adding noise to images and k-space data; 
-    Methods for converitng k-space data to images.
+Methods for setting and manipulating system variables; 
+Utility methods used to standardaze common functionality of pulse 
+sequence elements; 
+Methods which define and simulate the effects of various pulse 
+sequence elements; 
+Methods for adding noise to images and k-space data; 
+Methods for converitng k-space data to images.
 The sequence element methods take as input all the nessecary parametres 
 for defining that sequence element, then call the solving code to evolve
 the magnetization of the sample, then save that evolved magnetization in
@@ -320,7 +320,7 @@ class Experiment():
                                               sample_name+ '_MPosition.npy'),
                                               allow_pickle = True)
         self.size_4d = np.load(os.path.join(sample_path, sample_name,
-                                           sample_name+ '_size_4d.npy'),
+                                           sample_name+ '_size4D.npy'),
                                            allow_pickle = True)
         self.size_pixels = self.size_4d[0:3]
         self.size_metric = np.load(os.path.join(sample_path, sample_name,
