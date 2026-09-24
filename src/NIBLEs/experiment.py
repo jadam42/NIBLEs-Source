@@ -518,7 +518,7 @@ class Experiment():
         # Iteratively calculate signal excitation from flip angle train
         # until final flip angle needed to maintian constnat transverse
         # magnetization is ~= 90 degrees
-        while self.flip_angle_array[-1] < 89.9:
+        while np.degrees(self.flip_angle_array[-1]) < 89.9:
             init_angle += increment
             # Convert guess angle to radians and calculate inital points
             self.flip_angle_array[0] = np.radians(init_angle)
@@ -540,7 +540,7 @@ class Experiment():
             # If final element is nan (due to needing a flip angle >90),
             # decrease angle by increment, decrease increment step size,
             # and set element checked by while loop to zero
-            if np.isnan(self.flip_angle_array[-1]) is True:
+            if np.isnan(self.flip_angle_array[-1]):
                 init_angle = init_angle - increment
                 increment = increment/10
                 self.flip_angle_array[-1] = 0
