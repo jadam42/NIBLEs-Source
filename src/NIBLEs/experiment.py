@@ -1037,7 +1037,6 @@ class Experiment():
         self.duration = duration
         self.int_ends = (0, self.duration)
         self.time_series = np.array([self.duration])
-        self.relax_func = relax_func
         # Offsets given phi so B1 is applied along magnetization
         self.phi = -np.deg2rad(phi- 90)
         # Calulates B1 using amp_hz
@@ -1057,7 +1056,7 @@ class Experiment():
         equi_t1rho = copy.deepcopy(self.equi_m)*(self.b1/self.b0[2])
         # Evolve magnetization
         self.sample_mag, vector_sum = solver.solve(self.GAMMA, self.int_ends,
-                            self.time_series, self.sample_mag, self.relax_func,
+                            self.time_series, self.sample_mag, relax_func,
                             self.b0_func, self.brf_func, self.bgrad_func,
                             self.rx_func, self.frame_rot, self.param_t1_alt,
                             self.param_t2_alt, self.param_b0, self.param_rf,
