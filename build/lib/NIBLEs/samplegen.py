@@ -151,7 +151,7 @@ class ImagingVolume:
         point within the central 15th of the voxel.
 
         Note: A value of 0 in sample_mask is assumed to be empty space, 
-        and is assigned NaN for each MR property.
+        and is assigned nan for each MR property.
 
         Parameters
         ----------
@@ -178,18 +178,18 @@ class ImagingVolume:
             pos = np.array([index[0]+ dist_cent[0]+ vector_offset[vec_num],
                              index[1]+ dist_cent[1]+ vector_offset[vec_num],
                              index[2]+ dist_cent[2]+ vector_offset[vec_num]])
-            # If voxel is empty, assign NaN to all parameters
+            # If voxel is empty, assign nan to all parameters
             if self.sample_mask[index2] == 0:
-                self.sample_mag[index] = np.NaN
-                self.m_position[index] = np.NaN
-                self.chem_shift[index] = np.NaN
-                self.t1[index] = np.NaN
-                self.t2[index] = np.NaN
-                self.t2_prime[index] = np.NaN
-                self.dynamic_t1[index] = np.NaN
-                self.dynamic_t2[index] = np.NaN
-                self.dynamic_t1_alt[index] = np.NaN
-                self.dynamic_t2_alt[index] = np.NaN
+                self.sample_mag[index] = np.nan
+                self.m_position[index] = np.nan
+                self.chem_shift[index] = np.nan
+                self.t1[index] = np.nan
+                self.t2[index] = np.nan
+                self.t2_prime[index] = np.nan
+                self.dynamic_t1[index] = np.nan
+                self.dynamic_t2[index] = np.nan
+                self.dynamic_t1_alt[index] = np.nan
+                self.dynamic_t2_alt[index] = np.nan
             # If voxel contains a material, assign vector the parameters
             # defined in the relevant materClass
             for mater_cls in mater_classes:

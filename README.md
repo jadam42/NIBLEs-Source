@@ -4,7 +4,7 @@ NIBLEs is a Python package designed to simulate magnetic resonance (MR) experime
 
 Installation and Dependencies
 -----------------------------
-NIBLEs was developed in Python 3.8. It requires installation of NumPy version 1.24.2 or later and SciPy 1.10.1 or later. 
+NIBLEs was developed in Python 3.8. It requires installation of NumPy version 2.0 or later and SciPy 1.10.1 or later. 
 NIBLEs has been tested with and is fully compatible with Windows and Linux based operating systems. NIBLEs should work fully with MacOS as well, however this has not been verified by the developers.
 
 NIBLEs is at present not availalbe on PyPI. To install as a python package, please navigate to the folder containing the NIBLEs source code folder in the terminal, and use the command:

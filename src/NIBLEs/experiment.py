@@ -1059,8 +1059,8 @@ class Experiment():
         self.sample_mag, vector_sum = solver.solve(self.GAMMA, self.int_ends,
                             self.time_series, self.sample_mag, self.relax_func,
                             self.b0_func, self.brf_func, self.bgrad_func,
-                            self.rx_func, self.frame_rot, self.param_t1,
-                            self.param_t2, self.param_b0, self.param_rf,
+                            self.rx_func, self.frame_rot, self.param_t1_alt,
+                            self.param_t2_alt, self.param_b0, self.param_rf,
                             self.param_grad, self.param_rx, self.param_rot,
                             self.param_rot_plus, equi_t1rho, self.chunksize,
                             self.max_workers)
