@@ -1,0 +1,85 @@
+NIBLEs package
+==============
+
+Submodules
+----------
+
+NIBLEs.experiment module
+------------------------
+
+.. automodule:: NIBLEs.experiment
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+NIBLEs.fieldfunc module
+-----------------------
+
+.. automodule:: NIBLEs.fieldfunc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+NIBLEs.gradcal module
+---------------------
+
+.. automodule:: NIBLEs.gradcal
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+NIBLEs.materials module
+-----------------------
+
+.. automodule:: NIBLEs.materials
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+NIBLEs.noisefunc module
+-----------------------
+
+.. automodule:: NIBLEs.noisefunc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+NIBLEs.relaxfunc module
+-----------------------
+
+.. automodule:: NIBLEs.relaxfunc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+NIBLEs.rotfunc module
+---------------------
+
+.. automodule:: NIBLEs.rotfunc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+NIBLEs.samplegen module
+-----------------------
+
+.. automodule:: NIBLEs.samplegen
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+NIBLEs.solver module
+--------------------
+
+.. automodule:: NIBLEs.solver
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: NIBLEs
+   :members:
+   :show-inheritance:
+   :undoc-members:

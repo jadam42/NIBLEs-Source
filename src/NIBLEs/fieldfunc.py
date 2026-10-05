@@ -44,19 +44,19 @@ def ideal_b0(t, index, params):
         to the vector being simulated
     params : tuple
         Parameter tuple where each element is the following:
-        params[0] : array_like
-            3-Element array defining applied B0 field as a
-            cartesian vector (T).
-        params[1] : array_like
-            4D array containing field shifts calculated by
-            T2star reproduction for each vector (T); 
-            Experiment.t2_star_offsets.
-        params[2] : array_like
-            4D array containing material-specific chemical
-            shift for each vector (ppm); Experiment.chem_shift.
-        params[3] : dict
-            Dictionary containing any keyword arguments provided to
-            Experiment using Experiment.b0_set()
+            * params[0] : array_like
+                3-Element array defining applied B0 field as a
+                cartesian vector (T).
+            * params[1] : array_like
+                4D array containing field shifts calculated by
+                T2star reproduction for each vector (T); 
+                Experiment.t2_star_offsets.
+            * params[2] : array_like
+                4D array containing material-specific chemical
+                shift for each vector (ppm); Experiment.chem_shift.
+            * params[3] : dict
+                Dictionary containing any keyword arguments provided to
+                Experiment using Experiment.b0_set()
 
     Returns
     -------
@@ -85,20 +85,21 @@ def rf_sinc(t, index, params):
         to the vector being simulated
     params : tuple
         Parameter tuple where each element is the following:
-        params[0] : float
-            Duration of RF pulse; Experiment.duration
-        params[1] : float
-            RF field amplitude; Experiment.b1
-        params[2] : float
-            Carrier frequency of the RF pulse; Experiment.larmor
-            + Experiment.del_omega
-        params[3] : float
-            Phase factor of RF pulse; Experiment.phi
-        params[4] : float
-            Number of lobes in Sinc pulse waveform; Experiment.n_lobes
-        params[5] : dict
-            Dictionary containing any keyword arguments provided to
-            Experiment.rf_pulse()
+            * params[0] : float
+                Duration of RF pulse; Experiment.duration
+            * params[1] : float
+                RF field amplitude; Experiment.b1
+            * params[2] : float
+                Carrier frequency of the RF pulse; Experiment.larmor
+                + Experiment.del_omega
+            * params[3] : float
+                Phase factor of RF pulse; Experiment.phi
+            * params[4] : float
+                Number of lobes in Sinc pulse waveform;
+                Experiment.n_lobes
+            * params[5] : dict
+                Dictionary containing any keyword arguments provided to
+                Experiment.rf_pulse()
 
     Returns
     -------
@@ -131,20 +132,21 @@ def rf_win_sinc_hanning(t, index, params):
         to the vector being simulated
     params : tuple
         Parameter tuple where each element is the following:
-        params[0] : float
-            Duration of RF pulse; Experiment.duration
-        params[1] : float
-            RF field amplitude; Experiment.b1
-        params[2] : float
-            Carrier frequency of the RF pulse; Experiment.larmor
-            + Experiment.del_omega
-        params[3] : float
-            Phase factor of RF pulse; Experiment.phi
-        params[4] : float
-            Number of lobes in Sinc pulse waveform; Experiment.n_lobes
-        params[5] : dict
-            Dictionary containing any keyword arguments provided to
-            Experiment.rf_pulse()
+            * params[0] : float
+                Duration of RF pulse; Experiment.duration
+            * params[1] : float
+                RF field amplitude; Experiment.b1
+            * params[2] : float
+                Carrier frequency of the RF pulse; Experiment.larmor
+                + Experiment.del_omega
+            * params[3] : float
+                Phase factor of RF pulse; Experiment.phi
+            * params[4] : float
+                Number of lobes in Sinc pulse waveform;
+                Experiment.n_lobes
+            * params[5] : dict
+                Dictionary containing any keyword arguments provided to
+                Experiment.rf_pulse()
 
     Returns
     -------
@@ -178,20 +180,21 @@ def rf_win_sinc_hamming(t, index, params):
         to the vector being simulated
     params : tuple
         Parameter tuple where each element is the following:
-        params[0] : float
-            Duration of RF pulse; Experiment.duration
-        params[1] : float
-            RF field amplitude; Experiment.b1
-        params[2] : float
-            Carrier frequency of the RF pulse; Experiment.larmor
-            + Experiment.del_omega
-        params[3] : float
-            Phase factor of RF pulse; Experiment.phi
-        params[4] : float
-            Number of lobes in Sinc pulse waveform; Experiment.n_lobes
-        params[5] : dict
-            Dictionary containing any keyword arguments provided to
-            Experiment.rf_pulse()
+            * params[0] : float
+                Duration of RF pulse; Experiment.duration
+            * params[1] : float
+                RF field amplitude; Experiment.b1
+            * params[2] : float
+                Carrier frequency of the RF pulse; Experiment.larmor
+                + Experiment.del_omega
+            * params[3] : float
+                Phase factor of RF pulse; Experiment.phi
+            * params[4] : float
+                Number of lobes in Sinc pulse waveform;
+                Experiment.n_lobes
+            * params[5] : dict
+                Dictionary containing any keyword arguments provided to
+                Experiment.rf_pulse()
 
     Returns
     -------
@@ -227,23 +230,23 @@ def grad_ideal_square(t, index, params):
         to the vector being simulated
     params : tuple
         Parameter tuple where each element is the following:
-        params[0] : array_like
-            4D array containing positions of all vectors;
-            Experiment.m_position
-        params[1] : array_like
-            Maximum amplitude of gradient, expressed as a 
-            3-element NumPy array; Experiment.grad_amp
-        params[2] : array_like
-            Dimensions of the imaging volume in metric; 
-            Experiment.size_metric
-        params[3] : float
-            Duration of gradient; Experiment.duration
-        params[4] : float
-            Rise time of gradient waveform; Experiment.rise_time
-        params[5] : dict
-            Dictionary containing any keyword arguments provided to any
-            of the gradient methods in Experiment (eg.
-            Experiment.gradient())
+            * params[0] : array_like
+                4D array containing positions of all vectors;
+                Experiment.m_position
+            * params[1] : array_like
+                Maximum amplitude of gradient, expressed as a 
+                3-element NumPy array; Experiment.grad_amp
+            * params[2] : array_like
+                Dimensions of the imaging volume in metric; 
+                Experiment.size_metric
+            * params[3] : float
+                Duration of gradient; Experiment.duration
+            * params[4] : float
+                Rise time of gradient waveform; Experiment.rise_time
+            * params[5] : dict
+                Dictionary containing any keyword arguments provided to
+                any of the gradient methods in Experiment (eg.
+                Experiment.gradient())
 
     Returns
     -------
@@ -279,23 +282,23 @@ def grad_ideal_trap(t, index, params):
         to the vector being simulated
     params : tuple
         Parameter tuple where each element is the following:
-        params[0] : array_like
-            4D array containing positions of all vectors;
-            Experiment.m_position
-        params[1] : array_like
-            Maximum amplitude of gradient, expressed as a 
-            3-element NumPy array; Experiment.grad_amp
-        params[2] : array_like
-            Dimensions of the imaging volume in metric; 
-            Experiment.size_metric
-        params[3] : float
-            Duration of gradient; Experiment.duration
-        params[4] : float
-            Rise time of gradient waveform; Experiment.rise_time
-        params[5] : dict
-            Dictionary containing any keyword arguments provided to any
-            of the gradient methods in Experiment (eg.
-            Experiment.gradient())
+            * params[0] : array_like
+                4D array containing positions of all vectors;
+                Experiment.m_position
+            * params[1] : array_like
+                Maximum amplitude of gradient, expressed as a 
+                3-element NumPy array; Experiment.grad_amp
+            * params[2] : array_like
+                Dimensions of the imaging volume in metric; 
+                Experiment.size_metric
+            * params[3] : float
+                Duration of gradient; Experiment.duration
+            * params[4] : float
+                Rise time of gradient waveform; Experiment.rise_time
+            * params[5] : dict
+                Dictionary containing any keyword arguments provided to
+                any of the gradient methods in Experiment (eg.
+                Experiment.gradient())
 
     Returns
     -------
@@ -339,18 +342,18 @@ def rx_uniform(t, index, params):
         to the vector being simulated
     params : tuple
         Parameter tuple where each element is the following:
-        params[0] : array_like
-            4D array containing positions of all vectors;
-            Experiment.m_position
-        params[1] : array_like
-            Dimensions of the imaging volume in metric; 
-            Experiment.size_metric
-        params[2] : array_like
-            Dimensions of the imaging volume in pixels; 
-            Experiment.size_pixels
-        params[3] : dict
-            Dictionary containing any keyword arguments provided to
-            Experiment using Experiment.rx_set()
+            * params[0] : array_like
+                4D array containing positions of all vectors;
+                Experiment.m_position
+            * params[1] : array_like
+                Dimensions of the imaging volume in metric; 
+                Experiment.size_metric
+            * params[2] : array_like
+                Dimensions of the imaging volume in pixels; 
+                Experiment.size_pixels
+            * params[3] : dict
+                Dictionary containing any keyword arguments provided to
+                Experiment using Experiment.rx_set()
 
     Returns
     -------

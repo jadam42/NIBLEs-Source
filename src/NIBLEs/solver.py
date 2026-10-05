@@ -156,12 +156,12 @@ def solver_func(index, GAMMA, int_ends, time_series, sample_mag, relax_func,
     -------
     output : array_like
         3-element list. Each element is a numpy array containing: 
-            [0] magnetization vector index;
-            [1] the final state of the magnetization vector;
-            [2] the state of the vector at each timepoint in 
-                time_series, arranged such that each column contains the
-                results at a single timepoint, and each row contains
-                either the x-, y-, or z-component of the vector.
+            * [0] magnetization vector index;
+            * [1] the final state of the magnetization vector;
+            * [2] the state of the vector at each timepoint in 
+              time_series, arranged such that each column contains the
+              results at a single timepoint, and each row contains
+              either the x-, y-, or z-component of the vector.
     """
 
     # Rotate magnetization vector into the reference frame used for
