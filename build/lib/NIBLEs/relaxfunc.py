@@ -216,10 +216,10 @@ def bottomly_curve_offset(b_lab, b_larmor, b_solve, param_t1, param_t2):
     References
     ----------
     .. [1] Bottomley, P.A., Foster, T.H., Argersinger, R.E. and Pfeifer,
-    L.M. (1984), A review of normal tissue hydrogen NMR relaxation times
-    and relaxation mechanisms from 1-100 MHz: Dependence on tissue type,
-    NMR frequency, temperature, species, excision, and age. Med. Phys.,
-    11: 425-448. https://doi.org/10.1118/1.595535
+       L.M. (1984), A review of normal tissue hydrogen NMR relaxation
+       times and relaxation mechanisms from 1-100 MHz: Dependence on
+       tissue type, NMR frequency, temperature, species, excision, and
+       age. Med. Phys., 11: 425-448. https://doi.org/10.1118/1.595535
     """
 
     b_mag = np.sqrt(b_lab.dot(b_lab))
@@ -266,10 +266,10 @@ def bottomly_curve_offset_spinlock(b_lab, b_larmor, b_solve,
     References
     ----------
     .. [1] Bottomley, P.A., Foster, T.H., Argersinger, R.E. and Pfeifer,
-    L.M. (1984), A review of normal tissue hydrogen NMR relaxation times
-    and relaxation mechanisms from 1-100 MHz: Dependence on tissue type,
-    NMR frequency, temperature, species, excision, and age. Med. Phys.,
-    11: 425-448. https://doi.org/10.1118/1.595535
+       L.M. (1984), A review of normal tissue hydrogen NMR relaxation
+       times and relaxation mechanisms from 1-100 MHz: Dependence on
+       tissue type, NMR frequency, temperature, species, excision, and
+       age. Med. Phys., 11: 425-448. https://doi.org/10.1118/1.595535
     """
 
     b_mag = np.sqrt(b_solve.dot(b_solve))

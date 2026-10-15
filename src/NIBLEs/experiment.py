@@ -188,9 +188,9 @@ class Experiment():
         compute_time = time.datetime.now() - self.start_time
         self.print_list.extend([f"Total Compute Time = {compute_time}"])
         # Save data and print_list to file
-        np.savetxt(save_path+ f"/{file_name}_Output.csv", variable,
-                   delimiter=",")
-        with open(save_path+ f"/{file_name}_Params.txt", 'w') as f:
+        np.savetxt(os.path.join(save_path, f"{file_name}_Output.csv"),
+                   variable, delimiter=",")
+        with open(os.path.join(save_path, f"{file_name}_Params.txt"),'w') as f:
             f.write('\n'.join(self.print_list))
 
     def reset_magnetization(self, mag=None):
@@ -1218,10 +1218,10 @@ class Experiment():
             self.image = abs(np.fft.fftshift(image_data))
         # Save k-space magnitude data and image as .csv files
         if save_flag_csv is True:
-            np.savetxt(save_path+ f"/kMag_{file_name}.csv",
+            np.savetxt(os.path.join(save_path, f"/kMag_{file_name}.csv"),
                        signal_mag, delimiter=",")
-            np.savetxt(save_path+ f"/Image_{file_name}.csv", self.image,
-                       delimiter=",")
+            np.savetxt(os.path.join(save_path, f"/Image_{file_name}.csv"),
+                       self.image, delimiter=",")
         # Save k-space data, k-space magnitude data, and image as .png
         if save_flag_img is True:
             if n_dim == 1:
@@ -1244,15 +1244,15 @@ class Experiment():
                     ax2.plot(np.real(data))
                     ax1.title.set_text('Imaginary')
                     ax2.title.set_text('Real')
-                plt.savefig(save_path+ f"/kSpace_{file_name}.png")
+                plt.savefig(os.path.join(save_path, f"kSpace_{file_name}.png"))
                 # Plot Kspace magnitude data
                 plt.figure(2)
                 plt.plot(signal_mag)
-                plt.savefig(save_path+ f"/kMag_{file_name}.png")
+                plt.savefig(os.path.join(save_path, f"kMag_{file_name}.png"))
                 # Plot Image
                 plt.figure(3)
                 plt.plot(self.image)
-                plt.savefig(save_path+ f"/Image_{file_name}.png")
+                plt.savefig(os.path.join(save_path, f"Image_{file_name}.png"))
             elif n_dim == 2:
                 plt.rcParams["figure.figsize"] = (10,6)
                 # Plot Kspace data
@@ -1275,12 +1275,12 @@ class Experiment():
                     ax2.imshow(np.real(data))
                     ax1.title.set_text('Imaginary')
                     ax2.title.set_text('Real')
-                plt.savefig(save_path+ f"/kSpace_{file_name}.png")
+                plt.savefig(os.path.join(save_path, f"kSpace_{file_name}.png"))
                 # Plot Kspace magnitude data
                 plt.figure(2)
                 plt.imshow(signal_mag)
-                plt.savefig(save_path+ f"/kMag_{file_name}.png")
+                plt.savefig(os.path.join(save_path, f"kMag_{file_name}.png"))
                 # Plot Image
                 plt.figure(3)
                 plt.imshow(self.image, cmap = "gray")
-                plt.savefig(save_path+ f"/Image_{file_name}.png")
+                plt.savefig(os.path.join(save_path, f"Image_{file_name}.png"))

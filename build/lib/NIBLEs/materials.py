@@ -31,9 +31,40 @@ class InfiniteRelax(samplegen.Material):
 #~~~~~ Brain Materials ~~~~~#
 class GMSynth(samplegen.Material):
     """
-    Instance of Material class, pre-filled with parametres for human
-    Grey Matter at 3T. Contains parameters for dynamic relaxation
+    Instance of Material class, pre-filled with static parametres for
+    human Grey Matter at 3T. Contains parameters for dynamic relaxation
     through interpolation from 0.05T to 3T.
+
+    References
+    ----------
+    .. [1] Bottomley, P.A., Foster, T.H., Argersinger, R.E. and Pfeifer,
+       L.M. (1984), A review of normal tissue hydrogen NMR relaxation
+       times and relaxation mechanisms from 1-100 MHz: Dependence on
+       tissue type, NMR frequency, temperature, species, excision, and
+       age. Med. Phys., 11: 425-448. https://doi.org/10.1118/1.595535.
+
+    .. [2] O'Reilly T, Webb AG. In vivo T1 and T2 relaxation time maps
+       of brain tissue, skeletal muscle, and lipid measured in healthy
+       volunteers at 50 mT. Magn Reson Med. 2021; 87: 884-895.
+       https://doi.org/10.1002/mrm.29009.
+
+    .. [3] Rooney, W.D., Johnson, G., Li, X., Cohen, E.R., Kim, S.-G.,
+       Ugurbil, K. and Springer, C.S., Jr. (2007), Magnetic field and
+       tissue dependencies of human brain longitudinal 1H2O relaxation
+       in vivo. Magn. Reson. Med., 57: 308-318.
+       https://doi.org/10.1002/mrm.21122.
+
+    .. [4] Zhou, J., Golay, X., van Zijl, P.C.M., Silvennoinen, M.J.,
+       Kauppinen, R., Pekar, J. and Kraut, M. (2001), Inverse T2
+       contrast at 1.5 Tesla between gray matter and white matter in the
+       occipital lobe of normal adult human brain. Magn. Reson. Med.,
+       46: 401-406. https://doi.org/10.1002/mrm.1204.
+
+    .. [5] Wansapura, J.P., Holland, S.K., Dunn, R.S. and Ball, W.S., Jr
+       (1999), NMR relaxation times in the human brain at 3.0 tesla.
+       J. Magn. Reson. Imaging, 9: 531-538.
+       https://doi.org/10.1002/
+       (SICI)1522-2586(199904)9:4<531::AID-JMRI4>3.0.CO;2-L
     """
 
     def __init__(self, index = 1,
@@ -56,9 +87,40 @@ class GMSynth(samplegen.Material):
 
 class WMSynth(samplegen.Material):
     """
-    Instance of Material Class, pre-filled with parametres for human
-    White Matter at 3T. Contains parameters for dynamic relaxation
+    Instance of Material Class, pre-filled with static parametres for
+    human White Matter at 3T. Contains parameters for dynamic relaxation
     through interpolation from 0.05T to 3T.
+
+    References
+    ----------
+    .. [1] Bottomley, P.A., Foster, T.H., Argersinger, R.E. and Pfeifer,
+       L.M. (1984), A review of normal tissue hydrogen NMR relaxation
+       times and relaxation mechanisms from 1-100 MHz: Dependence on
+       tissue type, NMR frequency, temperature, species, excision, and
+       age. Med. Phys., 11: 425-448. https://doi.org/10.1118/1.595535.
+
+    .. [2] O'Reilly T, Webb AG. In vivo T1 and T2 relaxation time maps
+       of brain tissue, skeletal muscle, and lipid measured in healthy
+       volunteers at 50 mT. Magn Reson Med. 2021; 87: 884-895.
+       https://doi.org/10.1002/mrm.29009.
+
+    .. [3] Rooney, W.D., Johnson, G., Li, X., Cohen, E.R., Kim, S.-G.,
+       Ugurbil, K. and Springer, C.S., Jr. (2007), Magnetic field and
+       tissue dependencies of human brain longitudinal 1H2O relaxation
+       in vivo. Magn. Reson. Med., 57: 308-318.
+       https://doi.org/10.1002/mrm.21122.
+
+    .. [4] Zhou, J., Golay, X., van Zijl, P.C.M., Silvennoinen, M.J.,
+       Kauppinen, R., Pekar, J. and Kraut, M. (2001), Inverse T2
+       contrast at 1.5 Tesla between gray matter and white matter in the
+       occipital lobe of normal adult human brain. Magn. Reson. Med.,
+       46: 401-406. https://doi.org/10.1002/mrm.1204.
+
+    .. [5] Wansapura, J.P., Holland, S.K., Dunn, R.S. and Ball, W.S., Jr
+       (1999), NMR relaxation times in the human brain at 3.0 tesla.
+       J. Magn. Reson. Imaging, 9: 531-538.
+       https://doi.org/10.1002/
+       (SICI)1522-2586(199904)9:4<531::AID-JMRI4>3.0.CO;2-L
     """
 
     def __init__(self, index = 2,
@@ -80,9 +142,32 @@ class WMSynth(samplegen.Material):
 
 class CSFSynth(samplegen.Material):
     """
-    Instance of Material Class, pre-filled with parametres for human 
-    CSF at 3T. Contains parameters for dynamic relaxation 
-    through interpolation from 0.05T to 3T.
+    Instance of Material Class, pre-filled with static parametres for
+    human CSF at 3T. Contains parameters for dynamic relaxation through
+    interpolation from 0.05T to 3T.
+
+    References
+    ----------
+    .. [1] O'Reilly T, Webb AG. In vivo T1 and T2 relaxation time maps
+       of brain tissue, skeletal muscle, and lipid measured in healthy
+       volunteers at 50 mT. Magn Reson Med. 2021; 87: 884-895.
+       https://doi.org/10.1002/mrm.29009.
+
+    .. [2] Rooney, W.D., Johnson, G., Li, X., Cohen, E.R., Kim, S.-G.,
+       Ugurbil, K. and Springer, C.S., Jr. (2007), Magnetic field and
+       tissue dependencies of human brain longitudinal 1H2O relaxation
+       in vivo. Magn. Reson. Med., 57: 308-318.
+       https://doi.org/10.1002/mrm.21122.
+
+    .. [3] A. Daoust, S. Dodd, G. Nair, N. Bouraoud, S. Jacobson,
+       S. Walbridge, D.S. Reich, A. Koretsky, Transverse relaxation of
+       cerebrospinal fluid depends on glucose concentration, Magnetic
+       Resonance Imaging, Volume 44, 2017, Pages 72-81,
+       https://doi.org/10.1016/j.mri.2017.08.001.
+
+    .. [4] Lin C., Bernstein M., Huston J., Fain S.. Measurements of T1
+       Relaxation times at 3.0T: Implications for clinical MRA. Proc.
+       Intl. Soc. Mag. Reson. Med 9 (2001)
     """
 
     def __init__(self, index = 3,
@@ -106,12 +191,26 @@ class CSFSynth(samplegen.Material):
 #~~~~~ Agarose Phantoms ~~~~~#
 class Agar2pc(samplegen.Material):
     """
-    Instance of Material Class, pre-filled with parametres for 
-    2% Agarose gel at 3T. Does not contain information for dynamic 
-    relaxation. Prefilled with parameters for t1rho relaxation at 
-    500Hz. t1 and t2 information calculated from the formula published 
-    in Woletz, Medical Physics, 2021. t1rho values from Li, 
-    Osteoarthiris and Cartilage, 2015. Synthetic t2star and t2rho.
+    Instance of Material Class, pre-filled with static parametres for
+    2% Agarose gel at 3T. Does not contain information for dynamic
+    relaxation. Static t1rho relaxation value acquired at 500 Hz. t1 and
+    t2 information calculated from the formula published in [1]. t1rho
+    values from [2]. t2star and t2rho arbitrarily set to 20 ms.
+
+    References
+    ----------
+    .. [1] Woletz, M., Roat, S., Hummer, A., Tik, M. and Windischberger,
+       C. (2021), Technical Note: Human tissue-equivalent MRI phantom
+       preparation for 3 and 7 Tesla. Med. Phys., 48: 4387-4394.
+       https://doi.org/10.1002/mp.14986
+
+    .. [2] X. Li, V. Pedoia, D. Kumar, J. Rivoire, C. Wyatt,
+       D. Lansdown, K. Amano, N. Okazaki, D. Savic, M.F. Koff,
+       J. Felmlee, S.L. Williams, S. Majumdar, Cartilage T1rho and T2
+       relaxation times: longitudinal reproducibility and variations
+       using different coils, MR systems and sites, Osteoarthritis and
+       Cartilage, Volume 23, Issue 12, 2015, 2214-2223,
+       https://doi.org/10.1016/j.joca.2015.07.006.
     """
 
     def __init__(self, index = 1,
@@ -132,14 +231,28 @@ class Agar2pc(samplegen.Material):
 
 class Agar4pc(samplegen.Material):
     """
-    Instance of Material Class, pre-filled with parametres for 4% 
-    Agarose gel at 3T. Does not contain information for dynamic 
-    relaxation. Prefilled with parameters for t1rho relaxation at 
-    500Hz. t1 and t2 information calculated from the formula published 
-    in Woletz, Medical Physics, 2021. t1rho values from Buck, AJR, 
-    2011. Synthetic t2star and t2rho.
-    """
+    Instance of Material Class, pre-filled with static parametres for
+    4% Agarose gel at 3T. Does not contain information for dynamic
+    relaxation. Static t1rho relaxation value acquired at 500 Hz. t1 and
+    t2 information calculated from the formula published in [1]. t1rho
+    values from [2]. t2star and t2rho arbitrarily set to 20 ms.
 
+
+    References
+    ----------
+    .. [1] Woletz, M., Roat, S., Hummer, A., Tik, M. and Windischberger,
+       C. (2021), Technical Note: Human tissue-equivalent MRI phantom
+       preparation for 3 and 7 Tesla. Med. Phys., 48: 4387-4394.
+       https://doi.org/10.1002/mp.14986
+
+    .. [2] Buck FM, Bae WC, Diaz E, Du J, Statum S, Han ET, Chung CB.
+       Comparison of T1rho measurements in agarose phantoms and human
+       patellar cartilage using 2D multislice spiral and 3D
+       magnetization prepared partitioned k-space spoiled gradient-echo
+       snapshot techniques at 3 T. AJR Am J Roentgenol.
+       2011 Feb;196(2):W174-9. doi: 10.2214/AJR.10.4570.
+    """
+        
     def __init__(self, index = 2,
         pd = 1,
         chem_shift = 0,
@@ -158,11 +271,16 @@ class Agar4pc(samplegen.Material):
 
 class CFMMAgar2pc(samplegen.Material):
     """
-    Instance of Material Class, pre-filled with parametres for 2% 
-    Agarose gel at 3T. Contains parameters for dynamic t1rho 
-    relaxation. Prefilled with static parameters for t1rho relaxation 
-    at 500Hz. All relaxation values taken from CFMM Scans, except t2rho
-    which has been set to 1/2 t1rho.
+    Instance of Material Class, pre-filled with static parametres for 2%
+    Agarose gel at 3T. Contains parameters for dynamic t1rho relaxation
+    using interpolation. Static parameters denote t1rho relaxation
+    at 500Hz. All relaxation values taken from scans performed at
+    Western University [1], except t2rho which has been set to 1/2
+    t1rho.
+
+    References
+    ----------
+    .. [1] Unpublished, Under review
     """
 
     def __init__(self, index = 1,
@@ -185,11 +303,16 @@ class CFMMAgar2pc(samplegen.Material):
 
 class CFMMAgar4pc(samplegen.Material):
     """
-    Instance of Material Class, pre-filled with parametres for 4% 
-    Agarose gel at 3T. Contains parameters for dynamic t1rho 
-    relaxation. Prefilled with static parameters for t1rho relaxation 
-    at 500Hz. All relaxation values taken from CFMM Scans, except t2rho
-    which has been set to 1/2 t1rho.
+    Instance of Material Class, pre-filled with static parametres for 4%
+    Agarose gel at 3T. Contains parameters for dynamic t1rho relaxation
+    using interpolation. Prefilled with static parameters for t1rho
+    relaxation at 500Hz. All relaxation values taken from scans
+    performed at Western University [1], except t2rho which has been set
+    to 1/2 t1rho.
+
+    References
+    ----------
+    .. [1] Unpublished, under review
     """
 
     def __init__(self, index = 2,
@@ -214,13 +337,17 @@ class CFMMAgar4pc(samplegen.Material):
 
 class CartilageHealthy(samplegen.Material):
     """
-    Instance of Material Class, pre-filled with parametres for healthy 
-    cartilage. Contains information for dynamic relaxation calculations
-    at field strengths less than 3T using 
-    bottomley_curve_offset_spinlock(). Also contains information for 
-    dynamic t1rho under the same conditions. Constant relaxation 
-    values are set for B0 = 3T. Relaxation times have been aggregated
-    from the literature
+    Instance of Material Class, pre-filled with static parametres for
+    healthy cartilage. Contains parameters for dynamic relaxation
+    calculations at field strengths <= 3T using
+    bottomley_curve_offset_spinlock(). Also contains parameters
+    for dynamic t1rho for locking fields from 0 to 550 Hz. Constant
+    relaxation values are set for B0 = 3T. Relaxation times have been
+    aggregated from the literature [1].
+
+    References
+    ----------
+    .. [1] Unpublished, manuscript under preparation
     """
 
     def __init__(self, index = 1,
@@ -241,14 +368,23 @@ class CartilageHealthy(samplegen.Material):
 
 class CartilageMildOA(samplegen.Material):
     """
-    Instance of Material Class, pre-filled with parametres for 
-    cartilage affected by mild osteoarthritis. Contains information 
-    for dynamic relaxation calculations at field strengths less than 3T
-    using bottomley_curve_offset_spinlock(). Also contains information 
-    for dynamic t1rho under the same conditions. Constant relaxation 
-    values are set for B0 = 3T. Relaxation times are equivalent to 
-    healthy cartilage +14%, per the diagnostic criteria established by 
-    Chalin et al (2021), Radiology
+    Instance of Material Class, pre-filled with static parametres for
+    cartilage affected by mild osteoarthritis. Contains parameters
+    for dynamic relaxation calculations at field strengths <=3T
+    using bottomley_curve_offset_spinlock(). Also contains parameters
+    for dynamic t1rho for locking fields from 0 to 550 Hz. Constant
+    relaxation values are set for B0 = 3T. Relaxation times are
+    equivalent to healthy cartilage [1] +14%, per the diagnostic
+    criteria established by [2].
+
+    References
+    ----------
+    .. [1] Unpublished, manuscript under preparation
+
+    .. [2] Chalian, Majid & Li, Xiaojuan & Guermazi, Ali & Obuchowski,
+       Nancy & Carrino, John & Oei, Edwin & Link, Thomas. (2021). The
+       QIBA Profile for MRI-based Compositional Imaging of Knee
+       Cartilage. Radiology. 301. 204587. 10.1148/radiol.2021204587. 
     """ 
 
     def __init__(self, index = 2,

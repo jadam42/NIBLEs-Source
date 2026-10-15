@@ -165,7 +165,7 @@ class Experiment():
 
     #~~~~~ Utility Methods for data handling and manipulation ~~~~~#-\
 
-    def save_acquisition(self, variable, seq_name, sample_name):
+    def save_acquisition(self, variable, seq_name, sample_name, save_path):
         """Saves print_list and given NumPy array to file, using a file
         name derived from the sequence used and the name of the sample 
         used.
@@ -188,8 +188,9 @@ class Experiment():
         compute_time = time.datetime.now() - self.start_time
         self.print_list.extend([f"Total Compute Time = {compute_time}"])
         # Save data and print_list to file
-        np.savetxt(f"{file_name}_Output.csv", variable, delimiter=",")
-        with open(f"{file_name}_Params.txt", 'w') as f:
+        np.savetxt(os.path.join(save_path, f"{file_name}_Output.csv"),
+                   variable, delimiter=",")
+        with open(os.path.join(save_path, f"{file_name}_Params.txt"),'w') as f:
             f.write('\n'.join(self.print_list))
 
     def reset_magnetization(self, mag=None):
@@ -288,23 +289,23 @@ class Experiment():
         model_type : str, optional
             String identifying which relaxation model within each
             material to use. Options are:
-                If model_type = “Dynamic”:
-                param_t1/param_t2 == Material.DynamicT1/DynamicT2 and
-                param_t1_alt/param_t2_alt ==
-                Material.DynamicT1alt/DynamicT2alt
+                * If model_type = “Dynamic”:
+                    param_t1/param_t2 == Material.DynamicT1/DynamicT2
+                    and param_t1_alt/param_t2_alt ==
+                    Material.DynamicT1alt/DynamicT2alt
 
-                If model_type = “Dynamic_Alt”:
-                param_t1/param_t2 == Material.DynamicT1alt/DynamicT2alt
-                and param_t1_alt/param_t2_alt ==
-                Material.DynamicT1/DynamicT2
+                * If model_type = “Dynamic_Alt”:
+                    param_t1/param_t2 == Material.DynamicT1alt/
+                    DynamicT2alt and param_t1_alt/param_t2_alt ==
+                    Material.DynamicT1/DynamicT2
 
-                If model_type = “Constant_Alt”:
-                param_t1/param_t2 == Material.T1alt/T2alt and
-                param_t1_alt/param_t2_alt == Material.T1/T2
+                * If model_type = “Constant_Alt”:
+                    param_t1/param_t2 == Material.T1alt/T2alt and
+                    param_t1_alt/param_t2_alt == Material.T1/T2
 
-                For all other inputs for model_type:
-                param_t1/param_t2 == Material.T1/T2 and
-                param_t1_alt/param_t2_alt == Material.T1alt/T2alt
+                * For all other inputs for model_type:
+                    param_t1/param_t2 == Material.T1/T2 and
+                    param_t1_alt/param_t2_alt == Material.T1alt/T2alt
         """
         print('Loading Sample...')
         # Load in functions for calculating relaxation times
@@ -518,7 +519,9 @@ class Experiment():
         # Iteratively calculate signal excitation from flip angle train
         # until final flip angle needed to maintian constnat transverse
         # magnetization is ~= 90 degrees
-        while self.flip_angle_array[-1] < 89.9:
+        k = 0
+        while self.flip_angle_array[-1] < 89.5 and k <= 200:
+            k += 1
             init_angle += increment
             # Convert guess angle to radians and calculate inital points
             self.flip_angle_array[0] = np.radians(init_angle)
@@ -1215,10 +1218,10 @@ class Experiment():
             self.image = abs(np.fft.fftshift(image_data))
         # Save k-space magnitude data and image as .csv files
         if save_flag_csv is True:
-            np.savetxt(save_path+ f"/kMag_{file_name}.csv",
+            np.savetxt(os.path.join(save_path, f"/kMag_{file_name}.csv"),
                        signal_mag, delimiter=",")
-            np.savetxt(save_path+ f"/Image_{file_name}.csv", self.image,
-                       delimiter=",")
+            np.savetxt(os.path.join(save_path, f"/Image_{file_name}.csv"),
+                       self.image, delimiter=",")
         # Save k-space data, k-space magnitude data, and image as .png
         if save_flag_img is True:
             if n_dim == 1:
@@ -1241,15 +1244,15 @@ class Experiment():
                     ax2.plot(np.real(data))
                     ax1.title.set_text('Imaginary')
                     ax2.title.set_text('Real')
-                plt.savefig(save_path+ f"/kSpace_{file_name}.png")
+                plt.savefig(os.path.join(save_path, f"kSpace_{file_name}.png"))
                 # Plot Kspace magnitude data
                 plt.figure(2)
                 plt.plot(signal_mag)
-                plt.savefig(save_path+ f"/kMag_{file_name}.png")
+                plt.savefig(os.path.join(save_path, f"kMag_{file_name}.png"))
                 # Plot Image
                 plt.figure(3)
                 plt.plot(self.image)
-                plt.savefig(save_path+ f"/Image_{file_name}.png")
+                plt.savefig(os.path.join(save_path, f"Image_{file_name}.png"))
             elif n_dim == 2:
                 plt.rcParams["figure.figsize"] = (10,6)
                 # Plot Kspace data
@@ -1272,12 +1275,12 @@ class Experiment():
                     ax2.imshow(np.real(data))
                     ax1.title.set_text('Imaginary')
                     ax2.title.set_text('Real')
-                plt.savefig(save_path+ f"/kSpace_{file_name}.png")
+                plt.savefig(os.path.join(save_path, f"kSpace_{file_name}.png"))
                 # Plot Kspace magnitude data
                 plt.figure(2)
                 plt.imshow(signal_mag)
-                plt.savefig(save_path+ f"/kMag_{file_name}.png")
+                plt.savefig(os.path.join(save_path, f"kMag_{file_name}.png"))
                 # Plot Image
                 plt.figure(3)
                 plt.imshow(self.image, cmap = "gray")
-                plt.savefig(save_path+ f"/Image_{file_name}.png")
+                plt.savefig(os.path.join(save_path, f"Image_{file_name}.png"))
