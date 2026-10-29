@@ -1218,9 +1218,9 @@ class Experiment():
             self.image = abs(np.fft.fftshift(image_data))
         # Save k-space magnitude data and image as .csv files
         if save_flag_csv is True:
-            np.savetxt(os.path.join(save_path, f"/kMag_{file_name}.csv"),
+            np.savetxt(os.path.join(save_path, f"kMag_{file_name}.csv"),
                        signal_mag, delimiter=",")
-            np.savetxt(os.path.join(save_path, f"/Image_{file_name}.csv"),
+            np.savetxt(os.path.join(save_path, f"Image_{file_name}.csv"),
                        self.image, delimiter=",")
         # Save k-space data, k-space magnitude data, and image as .png
         if save_flag_img is True:
